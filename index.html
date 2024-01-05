@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="./assets/logo.svg" alt="logo">
+        </nav>
+    </header>
+    <div class="container">
+        <form id="taskForm" autocomplete="off">
+
+            <div>
+                <input type="text" id="taskName" class="todo-user-input" placeholder="Enter Your To-do List Task"
+                    required>
+            </div>
+
+            <div>
+                <input type="date" id="dueDate" class="todo-user-input" required>
+
+            </div>
+            <div>
+                <select id="priority" class="todo-user-input">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+
+            </div>
+
+            <div>
+                <select id="status" class="todo-user-input">
+                    <option value="todo">To-do</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+
+            </div>
+
+
+            <button class="add-button" type="button" onclick="addTask()">Add <img src="./assets/add-icon.svg"></button>
+        </form>
+
+        <div class="no-tasks-message">
+            <img src="./assets/notask-icon.svg" alt="no-task" id="noTaskIcon">
+
+        </div>
+        <div id="noTasksMessage" class="no-tasks-message">You have no To-do Items as of now.</div>
+        <div class="task-count-container">
+
+            <div id="taskCount"></div>
+            <div id="high">
+                <h2 style="color: #8284FA">
+                    High Priority <span id="topHighCount" class="info">0 of 0</span>
+                </h2>
+            </div>
+        </div>
+
+        <input class="mt-4" type="text" id="search" oninput="filterTasks()" placeholder="Search Your To-do">
+        <div id="taskList">
+
+        </div>
+        <div class="details-container">
+            <div id="started">
+                <h2 style="color: #8284FA">
+                    Started <span id="started_track" class="info">0</span>
+                </h2>
+            </div>
+
+            <div id="high">
+                <h2 style="color: #8284FA">
+                    High Priority <span id="high" class="info">0</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="details-container">
+            <div id="started">
+                <h2 style="color: #8284FA">
+                    completed <span id="completed" class="info">0</span>
+                </h2>
+            </div>
+
+            <div id="high">
+                <h2 style="color: #8284FA">
+                    High Priority <span id="highCount" class="info">0</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
